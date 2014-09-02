@@ -235,6 +235,8 @@ LOCAL_CPPFLAGS_Release := \
 LOCAL_CFLAGS := $(MY_CFLAGS_$(GYP_CONFIGURATION)) $(MY_DEFS_$(GYP_CONFIGURATION))
 LOCAL_C_INCLUDES := $(LOCAL_C_INCLUDES_$(GYP_CONFIGURATION))
 LOCAL_CPPFLAGS := $(LOCAL_CPPFLAGS_$(GYP_CONFIGURATION))
+# Clang always complain about comparison of this with NULL.
+LOCAL_CPPFLAGS += -Wno-tautological-undefined-compare
 ### Rules for final target.
 
 LOCAL_LDFLAGS_Debug := \
