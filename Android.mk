@@ -2,6 +2,7 @@ BASE_PATH := $(call my-dir)
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
 
 # We default to release for the Android build system. Developers debugging
 # code can build with "Debug"
@@ -276,14 +277,13 @@ LOCAL_LDFLAGS_Release := \
 LOCAL_LDFLAGS := $(LOCAL_LDFLAGS_$(GYP_CONFIGURATION))
 
 LOCAL_STATIC_LIBRARIES :=
+LOCAL_CXX_STL := stlport
 
 # Enable grouping to fix circular references
 LOCAL_GROUP_STATIC_LIBRARIES := true
 
 LOCAL_SHARED_LIBRARIES := \
-	libstlport \
 	libdl \
 
-include external/stlport/libstlport.mk
 
 include $(BUILD_STATIC_LIBRARY)
