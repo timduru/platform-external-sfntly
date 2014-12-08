@@ -134,8 +134,6 @@ MY_DEFS_Debug := \
 LOCAL_C_INCLUDES_Debug := \
 	$(LOCAL_PATH)/cpp/src \
 	$(LOCAL_PATH) \
-	external/icu/icu4c/source/common \
-	external/icu/icu4c/source/i18n \
 	frameworks/wilhelm/include \
 
 
@@ -217,8 +215,6 @@ MY_DEFS_Release := \
 LOCAL_C_INCLUDES_Release := \
 	$(LOCAL_PATH)/cpp/src \
 	$(LOCAL_PATH) \
-	external/icu/icu4c/source/common \
-	external/icu/icu4c/source/i18n \
 	frameworks/wilhelm/include \
 
 
@@ -232,6 +228,8 @@ LOCAL_CPPFLAGS_Release := \
 	-Wno-error=c++0x-compat \
 	-Wno-non-virtual-dtor \
 	-Wno-sign-promo
+
+LOCAL_SHARED_LIBRARIES := libicuuc libicui18n
 
 LOCAL_CFLAGS := $(MY_CFLAGS_$(GYP_CONFIGURATION)) $(MY_DEFS_$(GYP_CONFIGURATION))
 LOCAL_C_INCLUDES := $(LOCAL_C_INCLUDES_$(GYP_CONFIGURATION))
