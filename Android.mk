@@ -234,7 +234,5 @@ LOCAL_SHARED_LIBRARIES := libicuuc libicui18n
 LOCAL_CFLAGS := $(MY_CFLAGS_$(GYP_CONFIGURATION)) $(MY_DEFS_$(GYP_CONFIGURATION))
 LOCAL_C_INCLUDES := $(LOCAL_C_INCLUDES_$(GYP_CONFIGURATION))
 LOCAL_CPPFLAGS := $(LOCAL_CPPFLAGS_$(GYP_CONFIGURATION))
-# Clang always complain about comparison of this with NULL.
-LOCAL_CPPFLAGS += -Wno-tautological-undefined-compare
 
 include $(BUILD_STATIC_LIBRARY)
